@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mindscape.wallpicker">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/new_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/new_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.mindscape.wallpicker.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mindscape.wallpicker.DetailActivity"
+            />
+        <activity android:name="com.mindscape.wallpicker.CategoryWallpaper"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.mindscape.wallpicker.SettingActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.mindscape.wallpicker.AboutActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.mindscape.wallpicker.FavouritesActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.mindscape.wallpicker.SearchActivity"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>
