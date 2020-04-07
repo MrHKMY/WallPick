@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">WallPicker</string>
+
+    <string name="key">15553689-8b32abe3fcb16d4342c23bc11</string>
+
+    <string name="abyss_key">0d4aee34efb4689863fcc06fc11b271f</string>
+
+    <string name="userName">\"User: \"</string>
+    <string name="twitter">\@MrHKMY</string>
+    <string name="categoryList">List of Categories</string>
+    <string name="favouriteList">List of Favourites</string>
+    <string name="settingToolbar">Settings</string>
+    <string name="aboutToolbar">About</string>
+    <string name="poweredBy">Powered by</string>
+    <string name="developedBy">Developed by</string>
+    <string name="developerName">Hakimi Ridzuan</string>
+    <string name="visitgithub">Visit Github</string>
+    <string name="github">github.com/MrHKMY</string>
+    <string name="twitterfollow">Follow on Twitter</string>
+    <string name="libraries">Libraries</string>
+    <string name="butterknife">Butterknife</string>
+    <string name="butterknifeDetail">Field and method binding for Android views.</string>
+    <string name="firebase">Firebase</string>
+    <string name="firebaseDetail">Allows quick connect common UI elements to Firebase APIs.</string>
+    <string name="retrofit">Retrofit</string>
+    <string name="retrofitDetail">Type-safe HTTP client for Android and Java by Square Inc.</string>
+    <string name="picasso">Picasso</string>
+    <string name="picassoDetail">A powerful image downloading and caching library by Square Inc.</string>
+    <string name="recyclerview">RecyclerView</string>
+    <string name="recyclerviewDetail">More advanced and flexible version of ListView.</string>
+    <string name="materialdrawer">MaterialDrawer</string>
+    <string name="materialDrawerDetail">The flexible, easy to use, all in one drawer library by Mike Penz.</string>
+    <string name="fontawesome">FontAwesome</string>
+    <string name="fontAwesomeDetail">Allows to include any icon font with all its vector icons by Mike Penz.</string>
+    <string name="floatingactionbutton">FloatingActionButton</string>
+    <string name="fabDetail">Android Floating Action Button based on Material Design specification.</string>
+    <string name="emptyFavourite">Uh oh, it seems like the list is empty. It\'s okay, an empty list is better than an empty pocket.</string>
+    <string name="searchWallpaper">Search HD wallpapers…</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="usetheSearchFeature">Or you can use the search feature to search your desired category.</string>
+
+</resources>
