@@ -34,7 +34,7 @@
     <string name="fontAwesomeDetail">Allows to include any icon font with all its vector icons by Mike Penz.</string>
     <string name="floatingactionbutton">FloatingActionButton</string>
     <string name="fabDetail">Android Floating Action Button based on Material Design specification.</string>
-    <string name="emptyFavourite">Uh oh, it seems like the list is empty. It\'s okay, an empty list is better than an empty pocket.</string>
+    <string name="emptyFavourite">Uh oh, it seems like the list is empty</string>
     <string name="searchWallpaper">Search HD wallpapers…</string>
     <string name="sign_out">Sign Out</string>
     <string name="usetheSearchFeature">Or you can use the search feature to search your desired category.</string>
