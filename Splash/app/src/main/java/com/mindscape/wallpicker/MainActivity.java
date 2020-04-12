@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                                 .createSignInIntentBuilder()
                                 .setIsSmartLockEnabled(false)
                                 .setAvailableProviders(Arrays.asList(
-                                        new AuthUI.IdpConfig.GoogleBuilder().build(),
-                                        new AuthUI.IdpConfig.EmailBuilder().build()
+                                        new AuthUI.IdpConfig.EmailBuilder().build(),
+                                        new AuthUI.IdpConfig.AnonymousBuilder().build()
                                 ))
                                 .setLogo(R.drawable.new_login_logo)
                                 .setTheme(R.style.LoginTheme)
