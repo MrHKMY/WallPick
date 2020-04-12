@@ -34,28 +34,7 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/shape"
-                android:orientation="vertical"
-                android:padding="10dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/poweredBy"
-                    android:textColor="#000000"
-                    android:textStyle="italic" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_pixabaylogo2" />
-
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,7 +50,8 @@
                     android:layout_marginBottom="10dp"
                     android:text="@string/developedBy"
                     android:textColor="#000000"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textSize="16sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -91,7 +71,8 @@
                         android:text="@string/developerName"
                         android:textColor="#000000"
                         android:textStyle="bold"
-                        android:foregroundGravity="center"/>
+                        android:foregroundGravity="center"
+                        android:textSize="16sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,14 +100,15 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/visitgithub"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/github"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -154,14 +136,15 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/twitterfollow"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@string/twitter"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -180,7 +163,8 @@
                     android:layout_marginBottom="10dp"
                     android:text="@string/libraries"
                     android:textColor="#000000"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textSize="16sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -198,7 +182,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/butterknife"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -206,7 +191,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/butterknifeDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -214,7 +199,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/firebase"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -222,7 +208,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/firebaseDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -230,7 +216,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/retrofit"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -238,7 +225,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/retrofitDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -246,7 +233,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/picasso"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -254,7 +242,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/picassoDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -262,7 +250,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/recyclerview"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -270,7 +259,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/recyclerviewDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -278,7 +267,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/materialdrawer"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -286,7 +276,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/materialDrawerDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -294,7 +284,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/fontawesome"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -302,7 +293,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/fontAwesomeDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -310,7 +301,8 @@
                             android:layout_marginStart="10dp"
                             android:fontFamily="@font/adamina"
                             android:text="@string/floatingactionbutton"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -318,9 +310,32 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="@string/fabDetail"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poweredBy"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_pixabaylogo2" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
