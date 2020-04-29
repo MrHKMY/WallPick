@@ -43,6 +43,7 @@ public class DetailActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private int controller = 0;
     private String url;
+    public DatabaseHelper myDB;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class DetailActivity extends AppCompatActivity {
         viewIcon = findViewById(R.id.viewIcon);
         downloadICon = findViewById(R.id.downloadIcon);
         likeIcon = findViewById(R.id.likeIcon);
+        myDB = new DatabaseHelper(DetailActivity.this);
 
         FloatingActionButton floatingActionButton1 = findViewById(R.id.fab1);
         FloatingActionButton floatingActionButton2 = findViewById(R.id.fab2);
@@ -135,7 +137,14 @@ public class DetailActivity extends AppCompatActivity {
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+                String newEntry = photo.getLargeImage();
+                Toast.makeText(DetailActivity.this, newEntry, Toast.LENGTH_SHORT).show();
+                if (!newEntry.isEmpty()) {
+                    myDB.addText(newEntry);
+                    Toast.makeText(DetailActivity.this, "Added to favourite.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(DetailActivity.this, "wrong at outer if", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -193,4 +202,21 @@ public class DetailActivity extends AppCompatActivity {
         likes.setVisibility(View.INVISIBLE);
         user.setVisibility(View.GONE);
     }
+
+    /*public void AddData(String newEntry1){
+        if (newEntry1 != null) {
+
+            boolean insertData = myDB.addData(newEntry1);
+
+            if (insertData == true) {
+                Toast.makeText(DetailActivity.this, "Added to favourites.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(DetailActivity.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(DetailActivity.this, "wrong at outer if", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+     */
 }
