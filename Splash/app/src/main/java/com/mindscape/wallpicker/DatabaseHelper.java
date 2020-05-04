@@ -11,10 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "mydatabase";
-    public static final String TABLE_NAME = "tableName2";
-    public static final String COL1 = "ID";
-    public static final String COL2 = "ITEM1";
+    public static final String DATABASE_NAME = "mydatabase.db";
 
     public DatabaseHelper (Context context){
         super (context, DATABASE_NAME, null, 1);
@@ -22,21 +19,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTable = "CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY AUTOINCREMENT, txt TEXT)";
+        String createTable = "CREATE TABLE " + FavouriteContract.FavouriteEntry.TABLE_NAME + " (" + FavouriteContract.FavouriteEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                FavouriteContract.FavouriteEntry.COLUMN_NAME + " TEXT NOT NULL" +
+        ");";
         sqLiteDatabase.execSQL(createTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + FavouriteContract.FavouriteEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
 
     public boolean addText(String item1){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("txt", item1);
-        long result = db.insert(TABLE_NAME, null, contentValues);
+        contentValues.put(FavouriteContract.FavouriteEntry.COLUMN_NAME, item1);
+        long result = db.insert(FavouriteContract.FavouriteEntry.TABLE_NAME, null, contentValues);
         if (result == -1){
             return false;
         } else {
@@ -46,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getListContents() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor data = db.rawQuery("SELECT * FROM " + FavouriteContract.FavouriteEntry.TABLE_NAME, null);
         return data;
     }
 }
