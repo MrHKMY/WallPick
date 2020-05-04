@@ -1,22 +1,23 @@
 package com.mindscape.wallpicker;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Hakimi on 21/3/2020.
  */
 public class FavouritesActivity extends AppCompatActivity {
 
+    private SQLiteDatabase mDatabase;
+    private FavouriteViewAdapter mAdapter;
     private static final String TAG = "ListDataActivity";
     DatabaseHelper mDatabaseHelper;
     private ListView mListView;
@@ -29,15 +30,27 @@ public class FavouritesActivity extends AppCompatActivity {
         TextView titlebar = findViewById(R.id.titleToolbar);
         titlebar.setText(R.string.favouriteList);
 
-        mListView = findViewById(R.id.listView);
         mDatabaseHelper = new DatabaseHelper(this);
+        mDatabase = mDatabaseHelper.getWritableDatabase();
+        RecyclerView recyclerView = findViewById(R.id.favouriteRecyclerView);
+        GridLayoutManager manager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(manager);
+        mAdapter = new FavouriteViewAdapter(this, loadFavourites());
+        recyclerView.setAdapter(mAdapter);
 
-        Cursor data = mDatabaseHelper.getListContents();
-        ArrayList<String> listData = new ArrayList<>();
-        while(data.moveToNext()) {
-            listData.add(data.getString(1));
-        }
-        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
-        mListView.setAdapter(adapter);
     }
+
+    private Cursor loadFavourites() {
+        return mDatabase.query(
+                FavouriteContract.FavouriteEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+    }
+
+
 }

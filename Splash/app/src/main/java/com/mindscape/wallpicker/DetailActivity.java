@@ -3,8 +3,10 @@ package com.mindscape.wallpicker;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -44,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
     private int controller = 0;
     private String url;
     public DatabaseHelper myDB;
+    public SQLiteDatabase mDatabase;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -138,12 +141,12 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String newEntry = photo.getLargeImage();
-                Toast.makeText(DetailActivity.this, newEntry, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DetailActivity.this, newEntry, Toast.LENGTH_SHORT).show();
                 if (!newEntry.isEmpty()) {
                     myDB.addText(newEntry);
                     Toast.makeText(DetailActivity.this, "Added to favourite.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(DetailActivity.this, "wrong at outer if", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailActivity.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -203,20 +206,13 @@ public class DetailActivity extends AppCompatActivity {
         user.setVisibility(View.GONE);
     }
 
-    /*public void AddData(String newEntry1){
-        if (newEntry1 != null) {
-
-            boolean insertData = myDB.addData(newEntry1);
-
-            if (insertData == true) {
-                Toast.makeText(DetailActivity.this, "Added to favourites.", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(DetailActivity.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(DetailActivity.this, "wrong at outer if", Toast.LENGTH_SHORT).show();
+    private void addData(String newEntry1){
+        if (newEntry1.length() == 0){
+            return;
         }
+        ContentValues cv = new ContentValues();
+        cv.put(FavouriteContract.FavouriteEntry.COLUMN_NAME, newEntry1);
+        mDatabase.insert(FavouriteContract.FavouriteEntry.TABLE_NAME, null, cv);
+
     }
-    
-     */
 }
