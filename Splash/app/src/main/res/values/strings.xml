@@ -38,5 +38,7 @@
     <string name="searchWallpaper">Search HD wallpapers…</string>
     <string name="sign_out">Sign Out</string>
     <string name="usetheSearchFeature">Or you can use the search feature to search your desired category.</string>
+    <string name="sqlite">SQLite</string>
+    <string name="Sqlite_detail">SQLite is a opensource SQL database that stores data to a text file on a device.</string>
 
 </resources>
