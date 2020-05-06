@@ -141,7 +141,6 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String newEntry = photo.getLargeImage();
-                //Toast.makeText(DetailActivity.this, newEntry, Toast.LENGTH_SHORT).show();
                 if (!newEntry.isEmpty()) {
                     myDB.addText(newEntry);
                     Toast.makeText(DetailActivity.this, "Added to favourite.", Toast.LENGTH_SHORT).show();
@@ -155,12 +154,10 @@ public class DetailActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         photo = (HitsResult) bundle.getSerializable("images");
         photo2 = (WallpaperResults) bundle.getSerializable("abyss");
+        String photo3 = bundle.getString("theLink");
         if (bundle.getSerializable("images") != null) {
             populateActivity(photo);
             controller = 1;
-        } else {
-            populateAbyss(photo2);
-            controller = 2;
         }
     }
 
@@ -188,31 +185,5 @@ public class DetailActivity extends AppCompatActivity {
         downloads.setText(photo.getDownload());
         likes.setText("Likes: " + photo.getLikes());
         user.setText("By: " + photo.getUser());
-    }
-
-    private void populateAbyss(WallpaperResults photo2) {
-        progressBar.setVisibility(View.GONE);
-        Picasso.get()
-                .load(photo2.getUrl_thumb())
-                .resize(1920, 1080)
-                .into(imageView);
-
-        views.setText("Width: " + photo2.getWidth());
-        downloads.setText("Height: " + photo2.getHeight());
-        viewIcon.setVisibility(View.INVISIBLE);
-        downloadICon.setVisibility(View.INVISIBLE);
-        likeIcon.setVisibility(View.INVISIBLE);
-        likes.setVisibility(View.INVISIBLE);
-        user.setVisibility(View.GONE);
-    }
-
-    private void addData(String newEntry1){
-        if (newEntry1.length() == 0){
-            return;
-        }
-        ContentValues cv = new ContentValues();
-        cv.put(FavouriteContract.FavouriteEntry.COLUMN_NAME, newEntry1);
-        mDatabase.insert(FavouriteContract.FavouriteEntry.TABLE_NAME, null, cv);
-
     }
 }
