@@ -9,12 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -28,7 +30,6 @@ public class FavouriteViewAdapter extends RecyclerView.Adapter<FavouriteViewAdap
         mContext = context;
         mCursor = cursor;
     }
-
 
     @NonNull
     @Override
@@ -46,20 +47,17 @@ public class FavouriteViewAdapter extends RecyclerView.Adapter<FavouriteViewAdap
         String name = mCursor.getString(mCursor.getColumnIndex(FavouriteContract.FavouriteEntry.COLUMN_NAME));
 
         final Context context = holder.imageView.getContext();
-        //holder.nameText.setText(name);
 
         Picasso.get()
                 .load(name)
                 .into(holder.imageView);
 
-
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
+                Intent intent = new Intent(context, FavouriteDetailActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("images", name);
+                bundle.putSerializable("theLink", name);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }
@@ -76,15 +74,11 @@ public class FavouriteViewAdapter extends RecyclerView.Adapter<FavouriteViewAdap
 
     public static class FavouriteViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
-        //public RelativeLayout relativeLayout;
-        public TextView nameText;
 
         public FavouriteViewHolder (View view) {
             super(view);
-            //nameText = view.findViewById(R.id.textView_favourite);
             imageView = view.findViewById(R.id.favouriteImageView);
-            //imageView = view.findViewById(R.id.imageView);
-            //relativeLayout = view.findViewById(R.id.favouriteRelativeLayout);
+
         }
     }
 }

@@ -3,7 +3,9 @@ package com.mindscape.wallpicker;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -20,7 +22,6 @@ public class FavouritesActivity extends AppCompatActivity {
     private FavouriteViewAdapter mAdapter;
     private static final String TAG = "ListDataActivity";
     DatabaseHelper mDatabaseHelper;
-    private ListView mListView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +30,6 @@ public class FavouritesActivity extends AppCompatActivity {
 
         TextView titlebar = findViewById(R.id.titleToolbar);
         titlebar.setText(R.string.favouriteList);
-
         mDatabaseHelper = new DatabaseHelper(this);
         mDatabase = mDatabaseHelper.getWritableDatabase();
         RecyclerView recyclerView = findViewById(R.id.favouriteRecyclerView);
@@ -37,7 +37,6 @@ public class FavouritesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager);
         mAdapter = new FavouriteViewAdapter(this, loadFavourites());
         recyclerView.setAdapter(mAdapter);
-
     }
 
     private Cursor loadFavourites() {
@@ -50,6 +49,7 @@ public class FavouritesActivity extends AppCompatActivity {
                 null,
                 null
         );
+
     }
 
 

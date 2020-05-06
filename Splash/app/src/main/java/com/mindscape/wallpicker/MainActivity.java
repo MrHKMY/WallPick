@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                         } else if (position == 4) {
                             Intent i = new Intent(MainActivity.this, FavouritesActivity.class);
                             startActivity(i);
+                            Toast.makeText(MainActivity.this, "Retrieving favourite images.", Toast.LENGTH_SHORT).show();
                         } else if (position == 5) {
                             Intent i = new Intent(MainActivity.this, SettingActivity.class);
                             startActivity(i);
